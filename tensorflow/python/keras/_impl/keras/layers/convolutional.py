@@ -811,6 +811,7 @@ class SeparableConv1D(tf_convolutional_layers.SeparableConv1D, Layer):
         padding=padding,
         data_format=data_format,
         dilation_rate=dilation_rate,
+        depth_multiplier=depth_multiplier,
         activation=activations.get(activation),
         use_bias=use_bias,
         depthwise_initializer=initializers.get(depthwise_initializer),
@@ -833,6 +834,7 @@ class SeparableConv1D(tf_convolutional_layers.SeparableConv1D, Layer):
         'padding': self.padding,
         'data_format': self.data_format,
         'dilation_rate': self.dilation_rate,
+        'depth_multiplier': self.depth_multiplier,
         'activation': activations.serialize(self.activation),
         'use_bias': self.use_bias,
         'depthwise_initializer':
@@ -968,6 +970,7 @@ class SeparableConv2D(tf_convolutional_layers.SeparableConv2D, Layer):
         padding=padding,
         data_format=data_format,
         dilation_rate=dilation_rate,
+        depth_multiplier=depth_multiplier,
         activation=activations.get(activation),
         use_bias=use_bias,
         depthwise_initializer=initializers.get(depthwise_initializer),
@@ -996,6 +999,8 @@ class SeparableConv2D(tf_convolutional_layers.SeparableConv2D, Layer):
             self.data_format,
         'dilation_rate':
             self.dilation_rate,
+        'depth_multiplier':
+            self.depth_multiplier,
         'activation':
             activations.serialize(self.activation),
         'use_bias':
